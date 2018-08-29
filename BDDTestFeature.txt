@@ -1,0 +1,20 @@
+Feature: Create RestAPI to add, delete and display a collection of computer items
+
+Scenario: As a user I would like to View a list of computers
+	Given that a user visits the Display page
+	Then a list of computers should be displayed showing the name, IP address, MAC address,
+		date when added and location of the computer
+	but if the list is empty it should display ‘At the moment there are no computers’
+
+Scenario: As a user I would like to Delete a computers
+	Given that a user visits the Display page
+	And a list of computers is displayed
+	And I click the ‘Delete’ button
+	Then the selected computer is deleted
+
+Scenario: As a user I would like add a computer to storage
+	Given that a user visits the Add page
+	And completes the form with display the name, IP address, MAC address,
+		date when added and location (non-mandatory)
+	And clicks the Add button
+	Then add a computer to storage
